@@ -1,12 +1,3 @@
 function solution(n) {
-    let ans = 0;
-    while (n > 0) {
-        if (n % 2 === 1) {
-            ans++;
-            n--;
-        } else {
-            n /= 2;
-        }
-    }
-    return ans;
+    return n.toString(2).split('').filter(a => a === "1").length;
 }
