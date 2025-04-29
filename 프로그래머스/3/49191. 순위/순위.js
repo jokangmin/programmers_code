@@ -2,7 +2,6 @@ function solution(n, results) {
     var answer = 0;
     const win = Array.from({length: n + 1}, () => []);
     const lose = Array.from({length: n + 1}, () => []);
-    const count_arr = Array(n+1).fill(0);
     
     for(const [a, b] of results){
         win[a].push(b); 
