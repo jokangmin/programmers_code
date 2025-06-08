@@ -1,0 +1,12 @@
+WITH ONE_generation AS(
+    SELECT ID
+    FROM ECOLI_DATA
+    WHERE PARENT_ID IS NULL
+)
+
+SELECT E.ID AS ID
+FROM ECOLI_DATA E JOIN (SELECT ED.ID
+                        FROM ECOLI_DATA ED JOIN ONE_generation OG
+                        ON ED.PARENT_ID = OG.ID) TG
+ON E.PARENT_ID = TG.ID
+ORDER BY ID;
